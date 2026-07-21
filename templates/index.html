@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Textile Website</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+
+<header class="topbar">
+
+  <div class="tabs">
+
+    <a href="/" class="tab circle"></a>
+
+    <a href="/" class="tab large">
+      Home
+    </a>
+
+    <a href="/education" class="tab large">
+      Our Impact
+    </a>
+
+    <a href="/action" class="tab large">
+      Take Action
+    </a>
+
+    <a href="/resources" class="tab large">
+      Resources
+    </a>
+
+  </div>
+
+</header>
+
+<!-- EDUCATION PAGE CONTENT START -->
+
+<section class="info-section">
+
+    <h1>NEW: Discover Your Fashion Footprint</h1>
+
+    <div class="content">
+        <p>
+            How sustainable are your clothing habits? Take our less than a minute Textile Carbon Footprint Quiz and find out.
+        </p>
+    </div>
+
+</section>
+
+<div class="quiz-button-container">
+    <a href="/education" class="quiz-button">
+        Take the Quiz →
+    </a>
+</div>
+
+<!-- Image Section -->
+
+<section class="info-section">
+
+    <h1>The Rise of Fast Fashion</h1>
+
+    <div class="content with-image">
+
+        <div class="text">
+
+            <p>
+                Clothing is a part of our everyday lives, but the journey behind each garment is often overlooked. From the resources used to create fabrics to the waste left behind after clothes are discarded, fashion has a much larger impact than what we see in stores.
+            </p>
+
+            <p>
+                Fast fashion has made clothing cheaper and easier to access, but it has also increased textile waste, pollution, and the use of natural resources. Understanding these impacts is the first step toward creating a more sustainable future.
+            </p>
+
+        </div>
+
+        <img src="{{ url_for('static', filename='images/fashion-impact.png') }}"    alt="Clothing and sustainability">
+
+    </div>
+
+</section>
+
+
+<!-- Quick Facts Section -->
+<section class="info-section">
+
+    <h1>Did You Know?</h1>
+
+    <div class="content">
+
+        <h2>Textile Waste</h2>
+        <p>
+            Millions of tons of clothing are discarded every year, with much of it ending up in landfills instead of being reused or recycled.
+        </p>
+
+
+        <h2>Water Usage</h2>
+        <p>
+            Producing clothing requires large amounts of water, especially when growing and processing certain fibers.
+        </p>
+
+
+        <h2>Carbon Emissions</h2>
+        <p>
+            Creating and transporting clothing contributes to greenhouse gas emissions that affect our planet.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Explore Section -->
+<section class="info-section">
+
+    <h1>Explore More</h1>
+
+    <div class="content">
+
+        <p>
+            Learn more about the impact of fashion, discover ways to make sustainable choices, and find resources to continue your journey.
+        </p>
+
+        <p>
+            Visit <b>Your Impact</b> to learn about fast fashion and textile waste.
+        </p>
+
+        <p>
+            Visit <b>Take Action</b> to discover ways you can reduce clothing waste.
+        </p>
+
+        <p>
+            Visit <b>Resources</b> to explore more information about sustainable fashion.
+        </p>
+
+    </div>
+
+</section>

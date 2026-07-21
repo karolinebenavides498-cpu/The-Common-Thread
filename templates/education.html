@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Education</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="topbar">
+
+  <div class="tabs">
+
+    <a href="/" class="tab circle"></a>
+
+    <a href="/" class="tab large">
+      Home
+    </a>
+
+    <a href="/education" class="tab large">
+      Our Impact
+    </a>
+
+    <a href="/action" class="tab large">
+      Take Action
+    </a>
+
+    <a href="/resources" class="tab large">
+      Resources
+    </a>
+
+  </div>
+
+</header>
+
+<section class="info-section">
+
+
+    <div class="content">
+
+        <div class="text">
+            <p>
+             Every piece of clothing we buy, wear, and throw away has an impact. 
+             Take this quick quiz to discover how your clothing habits affect the 
+             environment and learn ways to reduce your textile footprint.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="quiz">
+
+    <form action="/calculate" method="POST">
+
+        <h1>Find your Textile Carbon Footprint</h1>
+
+        <div class="question">
+            <p>How often do you buy new clothing?</p>
+            <select name="buying">
+                <option value="more_week">More than 2 items per week</option>
+                <option value="two_week">About 2 items per week</option>
+                <option value="month">About 2 items per month</option>
+                <option value="year">About 2 items per year</option>
+                <option value="less">Less than 1 item per year</option>
+            </select>
+        </div>
+
+
+        <div class="question">
+            <p>What do you do with old clothes?</p>
+            <select name="old">
+                <option value="throw">Throw them away</option>
+                <option value="donate">Donate them</option>
+                <option value="sell">Sell or give away</option>
+                <option value="recycle">Recycle or upcycle</option>
+            </select>
+        </div>
+
+
+        <div class="question">
+            <p>What material is most of your clothing made from?</p>
+            <select name="material">
+                <option value="nylon">Nylon</option>
+                <option value="polyester">Polyester</option>
+                <option value="cotton">Cotton</option>
+                <option value="denim">Denim</option>
+                <option value="linen">Linen</option>
+            </select>
+        </div>
+
+
+        <div class="question">
+            <p>Where do you shop most often?</p>
+            <select name="shop">
+                <option value="shein">SHEIN / Temu</option>
+                <option value="fast">Fast fashion stores</option>
+                <option value="dept">Department stores</option>
+                <option value="thrift">Thrift stores</option>
+            </select>
+        </div>
+
+
+        <div class="question">
+            <p>How long do you keep clothing?</p>
+            <select name="life">
+                <option value="short">Less than 6 months</option>
+                <option value="mid">6 months – 1 year</option>
+                <option value="long">1 – 3 years</option>
+                <option value="longer">3 – 5 years</option>
+                <option value="very_long">More than 5 years</option>
+            </select>
+        </div>
+
+
+        <button type="submit">
+            Calculate
+        </button>
+
+    </form>
+
+</section>
+
+{% if show_result %}
+
+<section class="quiz">
+
+<h1>Your Result</h1>
+
+<h2>Score: {{ score }}</h2>
+
+<p>{{ result }}</p>
+
+<p>{{ description }}</p>
+
+<form action="/education">
+    <button type="submit">
+        Try Again
+    </button>
+</form>
+
+</section>
+
+{% endif %}
+
+
+<!-- EDUCATION PAGE CONTENT START -->
+
+<section class="info-section">
+
+
+    <div class="content">
+
+        <div class="text">
+            <p>
+            Your score shows how your current clothing habits compare in terms of textile impact. 
+            Remember, this score is not meant to judge your choices — it is simply a way to learn
+            more about how everyday decisions connect to the environment.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="info-section">
+
+    <h1>The Hidden Cost of Fashion</h1>
+
+    <div class="content with-image">
+
+        <div class="text">
+
+            <p>
+                The clothing we wear every day has a bigger impact than we often realize. 
+                Behind every garment are the materials, energy, transportation, and resources 
+                needed to create it. While fashion allows us to express ourselves, the way 
+                clothing is produced and discarded can create serious environmental challenges.
+            </p>
+
+        </div>
+
+        <img src="images/fashion-impact.png" alt="Clothing and sustainability">
+
+    </div>
+
+</section>
+
+
+
+<section class="info-section">
+
+    <h1>Textile Waste: A Growing Problem</h1>
+
+    <div class="content with-image">
+
+        <div class="text">
+
+            <p>
+                The fashion industry creates a large amount of waste, making textile pollution 
+                one of the fastest-growing environmental problems today. In the United States, 
+                millions of tons of clothing are thrown away every year, with much of it ending 
+                up in landfills instead of being reused, repaired, or recycled.
+            </p>
+
+            <p>
+                Around the world, clothing waste continues to increase as more garments are 
+                produced and discarded. As trends change faster and people buy more clothing, 
+                the amount of textile waste continues to grow.
+            </p>
+
+
+        </div>
+
+        <img src="images/fashion-impact.png" alt="Clothing and sustainability">
+
+    </div>
+
+</section>
+
+
+
+<section class="info-section">
+
+    <h1>Fashion's Environmental Impact</h1>
+
+    <div class="content with-image">
+
+        <div class="text">
+
+            <p>
+                The impact of fashion goes beyond clothing waste. Producing garments requires 
+                large amounts of water, energy, and raw materials. Manufacturing, transportation, 
+                and other parts of the clothing supply chain create greenhouse gas emissions 
+                that contribute to climate change.
+            </p>
+
+            <p>
+                Some production methods can also affect ecosystems by creating pollution and 
+                using harmful chemicals. Understanding these impacts helps us recognize how 
+                our clothing choices connect to larger environmental issues.
+
+        </div>
+
+        <img src="images/fashion-impact.png" alt="Clothing and sustainability">
+
+    </div>
+
+</section>
+
+
+
+<section class="info-section">
+
+    <h1>The Rise of Fast Fashion</h1>
+
+    <div class="content with-image">
+
+        <div class="text">
+
+            <p>
+               Fast fashion has changed the way many people shop for clothing. Brands can now 
+            produce new styles quickly and sell them at lower prices, encouraging consumers 
+            to buy more items and replace clothing more often.
+            </p>
+
+            <p>
+                While affordable clothing can make fashion more accessible, constantly changing 
+            trends and disposable clothing habits can increase waste. Choosing to repair, 
+            reuse, donate, or purchase clothing more thoughtfully can help reduce the impact 
+            of fast fashion.
+            </p>
+
+        </div>
+
+        <img src="images/fashion-impact.png" alt="Clothing and sustainability">
+
+    </div>
+
+</section>
